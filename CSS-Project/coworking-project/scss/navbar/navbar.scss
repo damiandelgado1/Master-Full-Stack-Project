@@ -1,0 +1,18 @@
+$link: none;
+$text-link: black;
+$reaction-link: #ACACAC;
+
+.link-navegation {
+    color: $text-link;
+    justify-content: center;
+    margin-left: 14px;
+    margin-right: 14px;
+    position: relative;
+    left: 450px;
+    bottom: 50px;
+    text-decoration: $link;
+}
+
+.link-navegation:hover {
+    color: $reaction-link;
+}

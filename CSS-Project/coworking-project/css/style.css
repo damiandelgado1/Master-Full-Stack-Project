@@ -1,0 +1,98 @@
+.link-navegation {
+  color: black;
+  justify-content: center;
+  margin-left: 14px;
+  margin-right: 14px;
+  position: relative;
+  left: 450px;
+  bottom: 50px;
+  text-decoration: none;
+}
+
+.link-navegation:hover {
+  color: #ACACAC;
+}
+
+.register {
+  color: #ACACAC;
+  margin-left: 1000px;
+  position: relative;
+  bottom: 70px;
+}
+
+.login {
+  background-color: #ACACAC;
+  color: white;
+  margin-left: 1100px;
+  padding: 14px;
+  position: relative;
+  bottom: 88px;
+  text-decoration: none;
+}
+
+.description-site {
+  background-color: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(12px);
+  font-size: 20px;
+  padding: 20px;
+  position: relative;
+  left: 550px;
+  bottom: 330px;
+  width: 450px;
+  height: 200px;
+}
+
+.service {
+  list-style: none;
+  margin-left: 750px;
+  position: relative;
+  bottom: 325px;
+}
+
+.service:nth-of-type(2) {
+  list-style: none;
+  margin-left: 950px;
+  position: relative;
+  bottom: 350px;
+}
+
+.service:nth-of-type(3) {
+  list-style: none;
+  position: relative;
+  bottom: 340px;
+}
+
+.service:nth-of-type(4) {
+  list-style: none;
+  margin-left: 950px;
+  position: relative;
+  bottom: 365px;
+}
+
+.service-site {
+  margin-left: 200px;
+  position: relative;
+  bottom: 300px;
+  width: 300px;
+}
+
+.service-site:nth-of-type(2) {
+  margin-left: 500px;
+  position: relative;
+  bottom: 530px;
+  width: 300px;
+}
+
+.service-site:nth-of-type(3) {
+  margin-left: 825px;
+  position: relative;
+  bottom: 770px;
+  width: 300px;
+}
+
+body {
+  font-family: Montserrat;
+  margin: 30px;
+}
+
+/*# sourceMappingURL=style.css.map */
