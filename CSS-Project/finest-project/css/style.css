@@ -1,0 +1,143 @@
+.login {
+  color: red;
+  position: relative;
+  left: 1050px;
+  bottom: 70px;
+}
+
+.register {
+  background-color: red;
+  border-radius: 4px;
+  color: white;
+  margin-left: 10px;
+  margin-right: 10px;
+  padding: 12px;
+  position: relative;
+  left: 1100px;
+  bottom: 70px;
+  text-decoration: none;
+}
+
+.link-navegation {
+  color: black;
+  justify-content: center;
+  margin-left: 20px;
+  margin-right: 20px;
+  position: relative;
+  left: 350px;
+  bottom: 50px;
+  text-decoration: black;
+}
+
+.link-navegation:hover {
+  color: red;
+}
+
+.service-1 {
+  list-style: none;
+  position: relative;
+  bottom: 320px;
+}
+
+.service-1:nth-of-type(3) {
+  list-style: none;
+  position: relative;
+  bottom: 370px;
+  margin-left: 180px;
+}
+
+.service-1:nth-of-type(4) {
+  list-style: none;
+  position: relative;
+  bottom: 370px;
+  margin-left: 180px;
+}
+
+.service-2 {
+  position: relative;
+  bottom: 300px;
+  margin-left: 50px;
+  width: 200px;
+}
+
+.service-2:nth-of-type(2) {
+  position: relative;
+  bottom: 490px;
+  margin-left: 310px;
+  width: 200px;
+}
+
+.service-2:nth-of-type(3) {
+  position: relative;
+  bottom: 680px;
+  margin-left: 565px;
+  width: 200px;
+}
+
+.service-2:nth-of-type(4) {
+  position: relative;
+  bottom: 870px;
+  margin-left: 815px;
+  width: 200px;
+}
+
+.service-2:nth-of-type(5) {
+  position: relative;
+  bottom: 1060px;
+  margin-left: 1050px;
+  width: 200px;
+}
+
+body {
+  font-family: Montserrat;
+  margin: 50px;
+}
+
+.site {
+  color: red;
+}
+
+.purchase {
+  position: relative;
+  left: 480px;
+}
+
+.description-site {
+  background-color: white;
+  font-size: 25px;
+  margin-left: 30px;
+  padding: 20px;
+  position: relative;
+  bottom: 370px;
+  width: 515px;
+}
+
+.description-site strong {
+  color: red;
+}
+
+input {
+  background-color: #CDCDCD;
+  border: none;
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+  padding: 10px;
+  position: relative;
+  left: 54px;
+  bottom: 341px;
+  width: 250px;
+}
+
+.search {
+  background-color: red;
+  border: none;
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+  color: white;
+  padding: 0.65em;
+  position: relative;
+  left: 50px;
+  bottom: 340px;
+}
+
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,54 @@
+.service-1 {
+    list-style: none;
+    position: relative;
+    bottom: 320px;
+}
+
+.service-1:nth-of-type(3) {
+    list-style: none;
+    position: relative;
+    bottom: 370px;
+    margin-left: 180px;
+}
+
+.service-1:nth-of-type(4) {
+    list-style: none;
+    position: relative;
+    bottom: 370px;
+    margin-left: 180px;
+}
+
+.service-2 {
+    position: relative;
+    bottom: 300px;
+    margin-left: 50px;
+    width: 200px;
+}
+
+.service-2:nth-of-type(2) {
+    position: relative;
+    bottom: 490px;
+    margin-left: 310px;
+    width: 200px;
+}
+
+.service-2:nth-of-type(3) {
+    position: relative;
+    bottom: 680px;
+    margin-left: 565px;
+    width: 200px;
+}
+
+.service-2:nth-of-type(4) {
+    position: relative;
+    bottom: 870px;
+    margin-left: 815px;
+    width: 200px;
+}
+
+.service-2:nth-of-type(5) {
+    position: relative;
+    bottom: 1060px;
+    margin-left: 1050px;
+    width: 200px;
+}

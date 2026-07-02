@@ -1,0 +1,57 @@
+@use "./button/button.scss";
+@use "./navbar/navbar.scss";
+@use "./service/service.scss";
+
+$font-main: Montserrat;
+
+body {
+    font-family: $font-main;
+    margin: 50px;
+}
+
+.site {
+    color: red;
+}
+
+.purchase {
+    position: relative;
+    left: 480px;
+}
+
+.description-site {
+    background-color: white;
+    font-size: 25px;
+    margin-left: 30px;
+    padding: 20px;
+    position: relative;
+    bottom: 370px;
+    width: 515px;
+}
+
+.description-site strong {
+    color: red;
+}
+
+input {
+    background-color: #CDCDCD;
+    border: none;
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+    padding: 10px;
+    position: relative;
+    left: 54px;
+    bottom: 341px;
+    width: 250px;
+}
+
+.search {
+    background-color: red;
+    border: none;
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+    color: white;
+    padding: 0.65em;
+    position: relative;
+    left: 50px;
+    bottom: 340px;
+}
