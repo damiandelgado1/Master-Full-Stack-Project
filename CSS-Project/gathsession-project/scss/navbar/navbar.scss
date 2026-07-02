@@ -1,0 +1,20 @@
+$font-main: Montserrat;
+$font-description: MerriWeather;
+$color-main: #003CC5;
+
+.link-navegation {
+    color: white;
+    margin-left: 10px;
+    margin-right: 10px;
+    position: relative;
+    left: 800px;
+    bottom: 50px;
+    justify-content: center;
+    text-decoration: none;
+}
+
+.link-navegation:hover {
+    color: white;
+    text-decoration: underline;
+    text-decoration-color: $color-main;
+}
