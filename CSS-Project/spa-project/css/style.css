@@ -1,0 +1,158 @@
+.comments {
+  background-color: #CDCDCD;
+  border-radius: 15px;
+  font-size: 12px;
+  padding: 20px;
+  width: 300px;
+  height: 100%;
+}
+
+.comments:nth-of-type(1) {
+  position: relative;
+  left: 900px;
+  bottom: 380px;
+}
+
+.comments:nth-of-type(2) {
+  position: relative;
+  left: 800px;
+  bottom: 350px;
+}
+
+.comments p:nth-of-type(1) {
+  color: black;
+}
+
+.comment {
+  color: #263F64;
+}
+
+.comment strong {
+  font-size: 30px;
+}
+
+.link-navegation {
+  color: #263F64;
+  margin-left: 20px;
+  margin-right: 20px;
+  position: relative;
+  left: 370px;
+  bottom: 40px;
+  text-decoration: none;
+}
+
+.element-site {
+  margin-left: 20px;
+  margin-right: 20px;
+  position: relative;
+  left: 400px;
+  bottom: 40px;
+}
+
+.login {
+  color: #263F64;
+  margin-left: 20px;
+  margin-right: 20px;
+  position: relative;
+  left: 1070px;
+  bottom: 60px;
+}
+
+.register {
+  background-color: #263F64;
+  border-radius: 30px;
+  color: white;
+  margin-left: 20px;
+  margin-right: 20px;
+  padding: 18px;
+  position: relative;
+  left: 1070px;
+  bottom: 60px;
+  text-decoration: none;
+}
+
+.buy {
+  background-color: #263F64;
+  border-radius: 30px;
+  color: white;
+  margin-left: 20px;
+  margin-right: 20px;
+  padding: 18px;
+  position: relative;
+  left: 30px;
+  top: 30px;
+  text-decoration: none;
+}
+
+.video {
+  color: #263F64;
+  margin-left: 20px;
+  margin-right: 20px;
+  position: relative;
+  left: 50px;
+  top: 30px;
+  text-decoration: none;
+}
+
+.video img {
+  position: relative;
+  right: 10px;
+  top: 2px;
+}
+
+.service-site {
+  display: inline-block;
+  margin-left: 100px;
+  margin-top: 100px;
+  width: 50px;
+}
+
+.service-site:nth-of-type(3) {
+  position: relative;
+  top: 20px;
+}
+
+.icon-site {
+  background-color: #263F64;
+  border-radius: 50px;
+  padding: 15px;
+}
+
+.description-service {
+  text-align: center;
+}
+
+* {
+  font-family: Montserrat;
+  font-size: 14px;
+}
+
+body {
+  color: #263F64;
+  margin: 30px;
+  padding: 0;
+}
+
+.name-site {
+  margin: 10px;
+}
+
+.phrase {
+  font-size: 50px;
+  position: relative;
+  left: 50px;
+  width: 650px;
+}
+
+.site-description {
+  font-size: 19px;
+  position: relative;
+  left: 50px;
+  width: 600px;
+}
+
+.site-description, .description-service {
+  color: #909090;
+}
+
+/*# sourceMappingURL=style.css.map */

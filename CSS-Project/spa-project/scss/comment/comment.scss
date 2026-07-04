@@ -1,0 +1,32 @@
+.comments {
+    background-color: #CDCDCD;
+    border-radius: 15px;
+    font-size: 12px;
+    padding: 20px;
+    width: 300px;
+    height: 100%;
+}
+
+.comments:nth-of-type(1) {
+    position: relative;
+    left: 900px;
+    bottom: 380px;
+}
+
+.comments:nth-of-type(2) {
+    position: relative;
+    left: 800px;
+    bottom: 350px;
+}
+
+.comments p:nth-of-type(1) {
+    color: black;
+}
+
+.comment {
+    color: #263F64;
+}
+
+.comment strong {
+    font-size: 30px;
+}

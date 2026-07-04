@@ -1,0 +1,39 @@
+@use "./comment/comment.scss";
+@use "./navbar/navbar.scss";
+@use "./button/button.scss";
+@use "./service/service.scss";
+
+$font-main: Montserrat;
+
+* {
+    font-family: $font-main;
+    font-size: 14px;
+}
+
+body {
+    color: #263F64;
+    margin: 30px;
+    padding: 0;
+}
+
+.name-site {
+    margin: 10px;
+}
+
+.phrase {
+    font-size: 50px;
+    position: relative;
+    left: 50px;
+    width: 650px;
+}
+
+.site-description {
+    font-size: 19px;
+    position: relative;
+    left: 50px;
+    width: 600px;
+}
+
+.site-description, .description-service {
+    color: #909090;
+}
