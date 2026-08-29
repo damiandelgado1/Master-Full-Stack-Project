@@ -4,8 +4,11 @@ import game from "./class/game";
 import box from "./class/box";
 import { shuffleArray } from './utils/utils';
 
-let rows = parseInt(prompt(`Ingresa un numero de filas`));
-let cols = parseInt(prompt(`Ingresa un numero de columnas`));
+let reset = document.getElementById('reset');
 
-let game = new Game();
-let box = new Box();
+reset.addEventListener('click', () => {
+    game.resetGame();
+});
+
+let data = Game.getRowsCols();
+let game = new Game(data.rows, data.cols, "game");

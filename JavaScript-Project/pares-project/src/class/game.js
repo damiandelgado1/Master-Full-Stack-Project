@@ -6,17 +6,23 @@ class Game {
     #cols;
     #idElement;
     #boxes;
+    #open;
 
     constructor(rows, cols, idElement="game") {
         this.rows = rows;
         this.cols = cols;
         this.idElement = idElement;
         this.#boxes = [];
+        this.#open = false;
 
         this.createBox();
         this.paintBox();
 
         console.log(`Se creo un objeto`);
+
+        this.element.addEventListener('click', () => {
+            this.checkOpenBoxes();
+        });
     }
 
     get cols() {
@@ -25,6 +31,26 @@ class Game {
 
     get rows() {
         return this.#rows;
+    }
+
+    checkOpenBoxes() {
+        let numberOpenBox = this.#boxes.filter((box) => box.open);
+
+        if (numberOpenBox.length == 2) {
+            if (numberOpenBox[0].color === numberOpenBox[1].color) {
+                numberOpenBox.map((box) => {
+                    box.free = false;
+                });
+            }
+        } else {
+            setTimeOut(() => {
+                numberOpenBox.map((box) => {
+                    box.open = true;
+                });
+            });
+        }
+
+        console.log(numberOpenBox);
     }
 
     createRandomColors() {
@@ -59,7 +85,7 @@ class Game {
     }
 
     paintBox() {
-        let tablero = document.getElementById(this.#idElement);
+        this.setCSSBoxTemplates();
 
         this.#boxes.map((box) => {
             let newBoxDiv = document.createElement('div');
@@ -68,6 +94,10 @@ class Game {
             newBoxDiv.dataset.col = box.col;
             newBoxDiv.dataset.row = box.row;
 
+            box.element = newBoxDiv;
+
+            box.addEventClick();
+
             this.element.appendChild(newBoxDiv);
         });
     }
@@ -75,6 +105,41 @@ class Game {
     setCSSBoxTemplates() {
         this.element.style.gridTemplateColumns = `repeat($this.cols), 1fr)`;
         this.element.style.gridTemplateRows = `repeat($this.rows), 1fr)`;
+    }
+
+    static getRowsCols() {
+
+        let rows, cols;
+
+        if (localStorage.getItem('rows') !== null && localStorage.getItem('cols') !== null) {
+            rows = parseInt(localStorage.getItem('rows'));
+            cols = parseInt(localStorage.getItem('cols'));
+        } else {
+            let rows = parseInt(prompt(`Ingresa un numero de filas`));
+            let cols = parseInt(prompt(`Ingresa un numero de columnas`));
+
+            while (rows*cols % 2 !== 0) {
+                alert(`El numero de cartas debe ser par`);
+
+                rows = parseInt(prompt(`Ingresa el numero de filas`));
+                cols = parseInt(prompt(`Ingresa el numero de columnas`));
+            }
+
+            localStorage('rows', rows);
+            localStorage('cols', cols);
+        }
+
+        return {
+            rows: rows,
+            cols: cols,
+        };
+    }
+
+    static resetGame() {
+        localStorage.removeItem('cols');
+        localStorage.removeItem('rows');
+
+        location.reload();
     }
 }
 
