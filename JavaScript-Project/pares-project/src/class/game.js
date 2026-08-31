@@ -7,6 +7,7 @@ class Game {
     #idElement;
     #boxes;
     #open;
+    timer;
 
     constructor(rows, cols, idElement="game") {
         this.rows = rows;
@@ -34,23 +35,35 @@ class Game {
     }
 
     checkOpenBoxes() {
-        let numberOpenBox = this.#boxes.filter((box) => box.open);
+        let numberOpenBox = this.#boxes.filter((box) => box.open && box.free);
 
         if (numberOpenBox.length == 2) {
             if (numberOpenBox[0].color === numberOpenBox[1].color) {
                 numberOpenBox.map((box) => {
                     box.free = false;
                 });
+
+                this.arrayBoxToLocalStorage();
             }
         } else {
             setTimeOut(() => {
                 numberOpenBox.map((box) => {
                     box.open = true;
                 });
-            });
+            }, 500);
         }
+    }
 
-        console.log(numberOpenBox);
+    checkFinishGame() {
+        let freeBox = this.#boxes.filter(box => box.free);
+
+        if (freeBox.length === 0) {
+            setTimeout(() => {
+                this.timer.stop();
+
+                alert(`Juego finalizado`);
+            }, 500);
+        }
     }
 
     createRandomColors() {
@@ -74,23 +87,73 @@ class Game {
     }
 
     createBox() {
-        let randomColors = this.createRandomColors();
+        if (localStorage.getItem('boxes' !== null)) {
+            let boxFromLocalStorage = localStorage.getItem('box');
 
-        for (let row = 0; row < this.#rows; row++) {
-            for (let col = 0; col < this.#cols; col++) {
-                let color = randomColors.shift();
-                let newBox = new Box(row, col);
+            boxFromLocalStorage.map(box => {
+                let newBox = new Box(box.row, box.col, box.color);
+            });
+
+        } else {
+
+            let randomColors = this.createRandomColors();
+            let arrayBoxToLocalStorage = [];
+
+            for (let row = 0; row < this.#rows; row++) {
+                for (let col = 0; col < this.#cols; col++) {
+                    let color = randomColors.shift();
+
+                    arrayColorsToLocalStorage.push({
+                        'row': row,
+                        'col': col,
+                        'color': color
+                    });
+
+                    let newBox = new Box(row, col);
+
+                    this.#boxes.push(newBox);
+                }
             }
         }
+
+
+        this.arrayBoxToLocalStorage();
+    }
+
+    arrayBoxToLocalStorage() {
+        let arrayBoxToLocalStorage = this.#boxes.map(box => {
+            return {
+                row: box.row,
+                col: box.col,
+                color: box.color,
+                free: box.free,
+                open: box.open
+            }
+        });
+
+        localStorage.setItem('boxes', JSON.stringify(arrayBoxToLocalStorage));
     }
 
     paintBox() {
+        let header = document.createElement('header');
+        this.element.appendChild(header);
+
+        let boxContainer = document.createElement('div');
+        boxContainer.setAttribute('id', 'boxContainer');
+
+        this.element.appendChild(boxContainer);
+
         this.setCSSBoxTemplates();
 
         this.#boxes.map((box) => {
             let newBoxDiv = document.createElement('div');
 
             newBoxDiv.classList.add('box');
+
+            if (!box.free || box.open) {
+                box.style.backgroundColor = box.color;
+            }
+
             newBoxDiv.dataset.col = box.col;
             newBoxDiv.dataset.row = box.row;
 
@@ -98,8 +161,18 @@ class Game {
 
             box.addEventClick();
 
-            this.element.appendChild(newBoxDiv);
+            boxContainer.appendChild(newBoxDiv);
         });
+    }
+
+    initTimer() {
+        let timerContainer = document.createElement('h2');
+        timerContainer.innerHTML = '<h2> <span id="timer"> 00:00:00 </span> </h2>';
+
+        let header = document.getElementById('boxHeader');
+        header.appendChild(timer);
+
+        let timer = new Timer();
     }
 
     setCSSBoxTemplates() {

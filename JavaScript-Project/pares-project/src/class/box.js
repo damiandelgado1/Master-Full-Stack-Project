@@ -4,8 +4,9 @@ class Box {
     #color;
     #free;
     #open;
+    #element;
 
-    constructor(col, row, color, free, open) {
+    constructor(col, row, color, free=true, open=false) {
         this.#col = col;
         this.#row = row;
         this.#color = color;
