@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react"
+import TodoItem from "./TodoItem"
 
 const TodoList = () => {
     const [todos, setTodos] = useState([])
