@@ -1,4 +1,8 @@
 import React, { useEffect, useState } from "react";
+import List from "./List";
+import Form from "./Form";
+
+const wishlistEndpoint = "https://academia.conquerblocks.com/playground/api/v1/wishlist/";
 
 const Wishlist = () => {
 
@@ -21,6 +25,7 @@ const Wishlist = () => {
             setWishlist(data);
         } catch {err} {
             console.error(err);
+            setLoadingError(err.message);
         }
     }
 
@@ -30,18 +35,8 @@ const Wishlist = () => {
 
     return (
         <div className="w-full min-h-screen bg-gray-900 text-white container mx-auto">
-            <ul>
-                {wishlist.map((item) => {
-                    <li key={item.id} className="list-disc">
-                        <span className="font-bold">
-                            {item.text}
-                        </span>
-                        <span className="text-gray-400 ml-2 inline-block">
-                            Escrito por: {item.author_name}
-                        </span>
-                    </li>
-                })}
-            </ul>
+            <Form onSuccess={loadWishlist}/>
+            <List items={wishlist} error={loadingError}/>
         </div>
     )
 }
