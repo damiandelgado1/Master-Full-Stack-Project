@@ -1,6 +1,5 @@
 import { useState } from "react";
-
-const wishlistSaveEndpoint = "https://academia.conquerblocks.com/playground/api/v1/wishlist/";
+import useApi from "../../hooks/useApi";
 
 const Form = ({onSuccess}) => {
 
@@ -15,6 +14,8 @@ const Form = ({onSuccess}) => {
             text: e.target.value
         });
     };
+
+    const api = useApi();
 
     const onSubmit = async (e) => {
         e.preventDefault();
@@ -31,29 +32,11 @@ const Form = ({onSuccess}) => {
                 text: formState.text
             }
 
-            const response = await fetch(wishlistSaveEndpoint, {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                    "Accept": "application/json"
-                },
-                body: JSON.stringify(payload)
-            });
-
-            if (!response.ok) {
-                const data = await response.json()
-
-                setFormState({
-                    ...formState,
-                    loading: false
-                });
-
-                throw new Error(data.message || "No se pudo guardar el deseo");
-            }
+            const { text } = await api.post("wishlist/", payload);
 
             setFormState({
                 ...formState,
-                text: "",
+                text,
                 loading: false
             })
 

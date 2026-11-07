@@ -1,27 +1,20 @@
 import React, { useEffect, useState } from "react";
 import List from "./List";
 import Form from "./Form";
-
-const wishlistEndpoint = "https://academia.conquerblocks.com/playground/api/v1/wishlist/";
+import useApi from "../../hooks/useApi";
 
 const Wishlist = () => {
 
     const [wishlist, setWishlist] = useState([]);
     const [loadingError, setLoadingError] = useState("")
 
+    const api = useApi()
+
     const loadWishlist = async () => {
         setLoadingError("")
-        const wishlistEndpoints = "https://academia.conquerblocks.com/playground/api/v1/wishlist/"
 
         try {
-            const response = await fetch(wishlistEndpoints)
-
-            if (!response.ok) {
-                throw new Error("La carga del wishlist ha fallado");
-            }
-
-            const data = await response.json()
-
+            const data = await api.get("wishlist/")
             setWishlist(data);
         } catch {err} {
             console.error(err);
